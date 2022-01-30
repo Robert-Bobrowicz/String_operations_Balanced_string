@@ -1,4 +1,4 @@
-# String_operations_Balanced_string
+# String operations: balanced string
 
 This example shows balanced string issue solution.
 
