@@ -69,3 +69,25 @@ console.log(checkTextBalance("ALLEbella"));
 console.log(checkTextBalance("ALLEella"));
 console.log(checkTextBalance("aaAddDeEkkkK"));
 console.log('end of a new method');
+//--------------------------------------------------------------------------------------------------------------------//
+
+//test dla sumy kontrolnej stringów (pozwoli to na ominięcie sortowania w powyższych rozwiązaniach)
+let a = "abcdefgh";
+let B = "ACBDEHGF";
+
+let A = a.toUpperCase();
+
+let sum = 0;
+let SUM = 0;
+
+for (let i = 0; i < A.length; i++) {
+    sum += A.charCodeAt(i);
+}
+
+for (let i = 0; i < B.length; i++){
+    SUM += B.charCodeAt(i);
+}
+
+console.log(sum);
+console.log(SUM);
+//--------------------------------------------------------------------------------------------------------------------//
