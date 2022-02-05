@@ -41,3 +41,30 @@ if (lowerCaseSubstring.toUpperCase() === upperCaseSubstring) {
 }
 
 console.log('end of operation');
+
+//inne rozwiązanie
+function checkTextBalance(txt) {
+    const arr = [...txt].sort((a, b) => a.localeCompare(b));
+    const set = new Set(arr);
+    const newArr = [...set];
+    console.log(newArr);
+
+    if (newArr.length % 2 === 0) {
+        let balance = true;
+        for (let i=0; i<newArr.length; i+=2) {
+            if (newArr[i].toUpperCase() !== newArr[i+1]) {
+                balance = false;
+                break;
+            }
+        }
+        return balance;
+    }
+    return false;
+}
+
+console.log("start new method");
+console.log(checkTextBalance("HOLLYWOODwoodhaolly"))
+console.log(checkTextBalance("HOLLYWOODwoodholly"))
+console.log(checkTextBalance("ALLEbella"))
+console.log(checkTextBalance("ALLEella"))
+console.log('end of a new method');
