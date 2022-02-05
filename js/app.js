@@ -63,8 +63,9 @@ function checkTextBalance(txt) {
 }
 
 console.log("start new method");
-console.log(checkTextBalance("HOLLYWOODwoodhaolly"))
-console.log(checkTextBalance("HOLLYWOODwoodholly"))
-console.log(checkTextBalance("ALLEbella"))
-console.log(checkTextBalance("ALLEella"))
+console.log(checkTextBalance("HOLLYWOODwoodhaolly"));
+console.log(checkTextBalance("HOLLYWOODwoodholly"));
+console.log(checkTextBalance("ALLEbella"));
+console.log(checkTextBalance("ALLEella"));
+console.log(checkTextBalance("aaAddDeEkkkK"));
 console.log('end of a new method');
