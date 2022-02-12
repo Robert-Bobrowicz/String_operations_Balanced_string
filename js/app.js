@@ -91,3 +91,60 @@ for (let i = 0; i < B.length; i++){
 console.log(sum);
 console.log(SUM);
 //--------------------------------------------------------------------------------------------------------------------//
+
+//jeszcze inne rozwiązanie od Pawła
+
+function fn(string) {
+    let lowerStr = "";
+    let upperStr = "";
+    const good = [];
+
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] >= "A" && string[i] < "a") upperStr = upperStr + string[i];
+        else lowerStr = lowerStr + string[i];
+    }
+
+    //tutaj nie chciałem robić pętli
+    // aby usunąć duplikaty
+    // więc zastosowałem ES6 i Set kolekcje
+    [...new Set(lowerStr.split(""))].forEach(function (letter) {
+        if (upperStr.includes(letter.toUpperCase())) {
+            good.push(letter);
+        }
+    });
+
+    if (!good.length) return -1;
+
+    const result = good.reduce(function (prev, curr) {
+        prev[curr] = charCount(string, curr);
+        return prev;
+    }, []);
+
+    return sortObject(result)[0];
+}
+
+function charCount(string, letter) {
+    const str = string.toLowerCase();
+    let letter_Count = 0;
+    for (let position = 0; position < str.length; position++) {
+        if (str.charAt(position) === letter) {
+            letter_Count += 1;
+        }
+    }
+    return letter_Count;
+}
+
+function sortObject(obj) {
+    const sortable = [];
+    for (let el in obj) {
+        sortable.push([el, obj[el]]);
+    }
+
+    return sortable.sort(function (a, b) {
+        return b[1] - a[1];
+    });
+}
+
+console.log(fn("abaAB"));
+console.log(fn("aB"));
+//--------------------------------------------------------------------------------------------------------------------//
